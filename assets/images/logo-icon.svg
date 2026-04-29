@@ -1,0 +1,23 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="primary-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C63FF" />
+      <stop offset="100%" stop-color="#8B85FF" />
+    </linearGradient>
+    <linearGradient id="secondary-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D4AA" />
+      <stop offset="100%" stop-color="#00E6B8" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(5, 5)">
+    <path d="M 15 25 L 5 15 L 15 5 L 25 15 Z" fill="none" stroke="url(#secondary-grad)" stroke-width="2.5" opacity="0.6"/>
+    <path d="M 15 25 L 15 15" stroke="url(#primary-grad)" stroke-width="2.5" />
+    <path d="M 5 15 L 15 5" stroke="url(#secondary-grad)" stroke-width="2.5" />
+    
+    <circle cx="15" cy="25" r="4.5" fill="url(#primary-grad)" />
+    <circle cx="5" cy="15" r="4.5" fill="url(#primary-grad)" />
+    <circle cx="25" cy="15" r="4.5" fill="url(#primary-grad)" />
+    <path d="M 15 0 C 10 7, 10 10, 15 13 C 20 10, 20 7, 15 0 Z" fill="url(#secondary-grad)" />
+  </g>
+</svg>

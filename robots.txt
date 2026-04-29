@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Perplexitybot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claudebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://pyronets.com/sitemap.xml

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+  <defs>
+    <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6C63FF"/>
+      <stop offset="1" stop-color="#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M14 8V32" stroke="url(#logo-grad)" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M14 11C14 11 34 8 34 20C34 28 24 30 14 29" stroke="url(#logo-grad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M28 20L36 20L40 24" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <circle cx="40" cy="24" r="2.5" fill="#00D4AA"/>
+    <circle cx="14" cy="8" r="1.5" fill="#6C63FF"/>
+    <circle cx="14" cy="32" r="1.5" fill="url(#logo-grad)"/>
+  </g>
+  <text x="52" y="28" font-family="Inter, -apple-system, sans-serif" font-weight="700" font-size="24" letter-spacing="-0.02em" fill="#FFFFFF">Pyronets</text>
+</svg>

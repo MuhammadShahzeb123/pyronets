@@ -1,0 +1,16 @@
+{
+  "name": "Pyronets",
+  "short_name": "Pyronets",
+  "description": "Professional Web Scraping & Data Extraction SaaS",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6C63FF",
+  "background_color": "#09090B",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

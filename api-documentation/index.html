@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="nosniff" http-equiv="X-Content-Type-Options"/>
+<meta content="SAMEORIGIN" http-equiv="X-Frame-Options"/>
+<title>API Documentation | Web Scraping API | Pyronets</title>
+<meta content="Pyronets API documentation. Learn how to integrate our web scraping API: authentication, endpoints, SDKs, and code examples." name="description"/>
+<link href="https://pyronets.com/api-documentation/" rel="canonical"/>
+<meta content="#6C63FF" name="theme-color"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<meta content="website" property="og:type"/>
+<meta content="https://pyronets.com/api-documentation/" property="og:url"/>
+<meta content="API Documentation | Web Scraping API | Pyronets" property="og:title"/>
+<meta content="Pyronets API documentation. Learn how to integrate our web scraping API: authentication, endpoints, SDKs, and code examples." property="og:description"/>
+<meta content="https://pyronets.com/assets/images/og-pyronets.png" property="og:image"/>
+<meta content="Pyronets" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@pyronets" name="twitter:site"/>
+<meta content="API Documentation | Web Scraping API | Pyronets" name="twitter:title"/>
+<meta content="Pyronets API documentation. Learn how to integrate our web scraping API: authentication, endpoints, SDKs, and code examples." name="twitter:description"/>
+<meta content="https://pyronets.com/assets/images/og-pyronets.png" name="twitter:image"/>
+<link href="../manifest.json" rel="manifest"/>
+<link href="../assets/images/favicon.svg" rel="apple-touch-icon"/>
+<link href="../assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pyronets.com/"},
+    {"@type": "ListItem", "position": 2, "name": "API Documentation", "item": "https://pyronets.com/api-documentation/"}
+  ]
+}
+</script>
+<link href="../styles.css" rel="stylesheet"/></head>
+<body>
+<header class="nav" id="nav">
+<div class="nav-inner">
+
+            <a href="../" class="nav-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#6C63FF"/>
+                            <stop offset="1" stop-color="#00D4AA"/>
+                        </linearGradient>
+                    </defs>
+                    <g>
+                        <path d="M14 8V32" stroke="url(#logo-grad)" stroke-width="3.5" stroke-linecap="round"/>
+                        <path d="M14 11C14 11 34 8 34 20C34 28 24 30 14 29" stroke="url(#logo-grad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                        <path d="M28 20L36 20L40 24" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        <circle cx="40" cy="24" r="2.5" fill="#00D4AA"/>
+                        <circle cx="14" cy="8" r="1.5" fill="#6C63FF"/>
+                        <circle cx="14" cy="32" r="1.5" fill="url(#logo-grad)"/>
+                    </g>
+                    <text x="52" y="28" font-family="Inter, -apple-system, sans-serif" font-weight="700" font-size="24" letter-spacing="-0.02em" class="logo-text">Pyronets</text>
+                </svg>
+            </a>
+<nav class="nav-links" id="navLinks">
+<a href="../web-scraping-services/">Web Scraping</a>
+<a href="../competitor-price-monitoring/">Price Monitoring</a>
+<a href="../product-data-scraping/">Product Data</a>
+<a href="../real-estate-data/">Real Estate</a>
+<a href="../job-listings-data/">Job Data</a>
+<a href="../data-for-ai/">Data for AI</a>
+<a href="../about/">About</a>
+<button aria-label="Toggle theme" class="btn btn-ghost" id="themeToggleText" style="margin-right: 8px; font-size: 14px;">🌙 Dark</button>
+<div class="nav-cta"><a class="btn btn-primary" href="../contact/">Start Free Trial →</a></div>
+</nav>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<main>
+<section class="page-header">
+<div class="container">
+<div class="breadcrumb"><a href="../">Home</a> <span class="separator">/</span> <span>API Documentation</span></div>
+<h1 class="animate">API <span class="text-gradient">Documentation</span></h1>
+</div>
+</section>
+<section class="section">
+<div class="container content animate">
+<h2>Pyronets REST API</h2>
+<p>The Pyronets API allows you to programmatically submit extraction requests, monitor job status, and retrieve structured data. All endpoints use HTTPS and return JSON responses.</p>
+<h2>Authentication</h2>
+<p>All API requests require an API key passed via the <code>Authorization</code> header:</p>
+<div class="code-block" style="margin:var(--space-4) 0;">
+<span class="code-keyword">Authorization</span>: Bearer <span class="code-string">YOUR_API_KEY</span>
+</div>
+<p>API keys are provided during onboarding. Contact your account manager or email <a href="mailto:contact.pyronets@gmail.com">contact.pyronets@gmail.com</a> to request access.</p>
+<h2>Base URL</h2>
+<div class="code-block" style="margin:var(--space-4) 0;">
+          https://api.pyronets.com/v1
+        </div>
+<h2>Endpoints</h2>
+<h3>POST /extract</h3>
+<p>Submit a new data extraction request.</p>
+<div class="code-block" style="margin:var(--space-4) 0;">
+<span class="code-keyword">POST</span> /v1/extract<br/><br/>
+          {<br/>
+            <span class="code-string">"url"</span>: <span class="code-string">"https://example.com/products"</span>,<br/>
+            <span class="code-string">"fields"</span>: [<span class="code-string">"name"</span>, <span class="code-string">"price"</span>, <span class="code-string">"stock"</span>],<br/>
+            <span class="code-string">"render_js"</span>: <span class="code-keyword">true</span>,<br/>
+            <span class="code-string">"proxy_country"</span>: <span class="code-string">"US"</span><br/>
+          }
+        </div>
+<h3>GET /jobs/{job_id}</h3>
+<p>Check the status of an extraction job.</p>
+<h3>GET /jobs/{job_id}/results</h3>
+<p>Retrieve extracted data in JSON format.</p>
+<h3>GET /usage</h3>
+<p>View your current API usage, quotas, and billing summary.</p>
+<h2>Rate Limits</h2>
+<ul>
+<li>Free trial: 100 requests/day</li>
+<li>Starter: 1,000 requests/day</li>
+<li>Business: 10,000 requests/day</li>
+<li>Enterprise: Unlimited (custom SLA)</li>
+</ul>
+<h2>SDKs &amp; Libraries</h2>
+<p>Official SDKs are available for Python, Node.js, and Go. Community libraries are available for Ruby, PHP, and Java.</p>
+<div class="code-block" style="margin:var(--space-4) 0;">
+<span class="code-comment"># Python SDK</span><br/>
+<span class="code-keyword">pip install</span> pyronets<br/><br/>
+<span class="code-comment"># Node.js SDK</span><br/>
+<span class="code-keyword">npm install</span> @pyronets/sdk
+        </div>
+<h2>Need Help?</h2>
+<p>Contact our technical team at <a href="mailto:contact.pyronets@gmail.com">contact.pyronets@gmail.com</a> or reach out to your dedicated account manager for API support.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="cta-banner animate">
+<h2>Ready to get started?</h2>
+<p>Get a free consultation and custom proposal for your data needs.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary btn-lg" href="../contact/">Get Started →</a>
+<a class="btn btn-secondary btn-lg" href="../prices/">View Pricing</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+
+                    <a href="../" class="nav-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+                            <defs>
+                                <linearGradient id="logo-grad-footer" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6C63FF"/>
+                                    <stop offset="1" stop-color="#00D4AA"/>
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <path d="M14 8V32" stroke="url(#logo-grad-footer)" stroke-width="3.5" stroke-linecap="round"/>
+                                <path d="M14 11C14 11 34 8 34 20C34 28 24 30 14 29" stroke="url(#logo-grad-footer)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                                <path d="M28 20L36 20L40 24" stroke="url(#logo-grad-footer)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <circle cx="40" cy="24" r="2.5" fill="#00D4AA"/>
+                                <circle cx="14" cy="8" r="1.5" fill="#6C63FF"/>
+                                <circle cx="14" cy="32" r="1.5" fill="url(#logo-grad-footer)"/>
+                            </g>
+                            <text x="52" y="28" font-family="Inter, -apple-system, sans-serif" font-weight="700" font-size="24" letter-spacing="-0.02em" class="logo-text">Pyronets</text>
+                        </svg>
+                    </a>
+<p>Enterprise-grade web scraping and data extraction, trusted by 200+ companies worldwide since 2020.</p>
+</div>
+<div>
+<h4 class="footer-heading">Services</h4>
+<div class="footer-links">
+<a href="../web-scraping-services/">Web Scraping Services</a>
+<a href="../enterprise-web-scraping/">Enterprise Web Scraping</a>
+<a href="../competitor-price-monitoring/">Price Monitoring</a>
+<a href="../product-data-scraping/">Product Data Scraping</a>
+<a href="../real-estate-data/">Real Estate Data</a>
+</div>
+</div>
+<div>
+<h4 class="footer-heading">Solutions</h4>
+<div class="footer-links">
+<a href="../job-listings-data/">Job Listings Data</a>
+<a href="../data-for-ai/">Data for AI Training</a>
+<a href="../ticket-data/">Ticket &amp; Event Data</a>
+<a href="../how-it-works/">How It Works</a>
+<a href="../api-documentation/">API Documentation</a>
+</div>
+</div>
+<div>
+<h4 class="footer-heading">Company</h4>
+<div class="footer-links">
+<a href="../about/">About Us</a>
+<a href="../contact/">Contact</a>
+<a href="../blog/">Blog</a>
+<a href="../case-studies/">Case Studies</a>
+<a href="../security/">Security</a>
+<a href="../privacy-policy/">Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="footer-copyright">© 2026 Pyronets. All rights reserved.</p>
+<p class="footer-tagline">Built for developers, by developers.</p>
+<div class="footer-socials">
+<a aria-label="LinkedIn" href="https://linkedin.com/company/pyronets" rel="noopener" target="_blank">in</a>
+<a aria-label="Twitter" href="https://twitter.com/pyronets" rel="noopener" target="_blank">X</a>
+<a aria-label="GitHub" href="https://github.com/pyronets" rel="noopener" target="_blank">GH</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script defer="" src="../main.js"></script></body>
+</html>
