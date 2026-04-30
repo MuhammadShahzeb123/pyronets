@@ -88,7 +88,7 @@ export default function WebScrapingServicesPage() {
 
       {/* Key Benefits */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Why Choose Pyronets?
         </h2>
 
@@ -119,9 +119,9 @@ export default function WebScrapingServicesPage() {
               description: 'Handle single-page apps, dynamic content, and infinite scroll. Our headless browsers render everything.',
             },
           ].map((benefit, idx) => (
-            <div key={idx} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+            <div key={idx} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{benefit.title}</h3>
+              <p className="text-muted-foreground">{benefit.description}</p>
             </div>
           ))}
         </div>
@@ -129,7 +129,7 @@ export default function WebScrapingServicesPage() {
 
       {/* Use Cases */}
       <Section id="use-cases">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Common Use Cases
         </h2>
 
@@ -160,12 +160,9 @@ export default function WebScrapingServicesPage() {
               description: 'Collect diverse, large-scale datasets for training machine learning and AI models.',
             },
           ].map((useCase, idx) => (
-            <div
-              key={idx}
-              className="border-l-4 border-primary pl-6 py-4"
-            >
-              <h3 className="text-xl font-bold text-dark mb-2">{useCase.title}</h3>
-              <p className="text-gray-600">{useCase.description}</p>
+            <div key={idx} className="border-l-4 border-primary pl-6 py-4">
+              <h3 className="text-xl font-bold text-foreground mb-2">{useCase.title}</h3>
+              <p className="text-muted-foreground">{useCase.description}</p>
             </div>
           ))}
         </div>
@@ -173,7 +170,7 @@ export default function WebScrapingServicesPage() {
 
       {/* Process */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Our Process
         </h2>
 
@@ -207,13 +204,13 @@ export default function WebScrapingServicesPage() {
           ].map((step) => (
             <div key={step.num} className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 border border-primary/40 text-primary font-bold text-lg">
                   {step.num}
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-dark mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
               </div>
             </div>
           ))}
@@ -222,7 +219,7 @@ export default function WebScrapingServicesPage() {
 
       {/* Industries */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Industry Solutions
         </h2>
 
@@ -231,12 +228,12 @@ export default function WebScrapingServicesPage() {
             <Link
               key={solution.id}
               href={solution.href}
-              className="p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all"
+              className="glass glass-hover rounded-xl p-6 transition-all duration-300 group"
             >
-              <h3 className="text-lg font-bold text-dark mb-2 hover:text-primary">
+              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {solution.title}
               </h3>
-              <p className="text-gray-600 text-sm">{solution.description}</p>
+              <p className="text-muted-foreground text-sm">{solution.description}</p>
             </Link>
           ))}
         </div>
@@ -244,7 +241,7 @@ export default function WebScrapingServicesPage() {
 
       {/* FAQ */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12">
+        <h2 className="text-4xl font-bold text-foreground mb-12">
           Frequently Asked Questions
         </h2>
         <FAQ faqs={faqs} />

@@ -77,42 +77,42 @@ export default function PricingPage() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-lg border-2 p-8 transition-all ${
+              className={`rounded-xl p-8 transition-all duration-300 ${
                 plan.popular
-                  ? 'border-primary bg-gradient-to-br from-primary/5 to-secondary/5 transform md:scale-105'
-                  : 'border-gray-200 bg-white'
+                  ? 'glass-strong border border-primary/30 glow-primary-sm md:scale-105'
+                  : 'glass glass-hover'
               }`}
             >
               {plan.popular && (
-                <div className="mb-4 inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-white text-sm font-bold rounded-full">
+                <div className="mb-4 inline-block px-4 py-1 bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-bold rounded-full">
                   Most Popular
                 </div>
               )}
 
-              <h3 className="text-2xl font-bold text-dark mb-2">{plan.name}</h3>
-              <p className="text-gray-600 text-sm mb-4">{plan.description}</p>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+              <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
 
               <div className="mb-6">
-                <p className="text-lg text-gray-600 mb-1">Starting at</p>
-                <p className="text-4xl font-bold text-dark">{plan.price}</p>
-                <p className="text-sm text-gray-500 mt-1">Contact for exact quote</p>
+                <p className="text-lg text-muted-foreground mb-1">Starting at</p>
+                <p className="text-4xl font-bold text-foreground">{plan.price}</p>
+                <p className="text-sm text-muted-foreground mt-1">Contact for exact quote</p>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="text-secondary font-bold mt-1">✓</span>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-secondary font-bold mt-1">&#10003;</span>
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <a
                 href="/contact"
-                className={`w-full block text-center px-6 py-3 font-semibold rounded-lg transition-all ${
+                className={`w-full block text-center px-6 py-3 font-semibold rounded-lg transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg'
-                    : 'border-2 border-primary text-primary hover:bg-primary/5'
+                    ? 'bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5'
+                    : 'glass border border-primary/30 text-primary hover:border-primary/60 hover:bg-primary/10'
                 }`}
               >
                 {plan.cta}
@@ -124,7 +124,7 @@ export default function PricingPage() {
 
       {/* Pricing FAQ */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Pricing FAQs
         </h2>
 
@@ -162,8 +162,8 @@ export default function PricingPage() {
             },
           ].map((faq, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-bold text-dark mb-3">{faq.question}</h3>
-              <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              <h3 className="text-lg font-bold text-foreground mb-3">{faq.question}</h3>
+              <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
             </div>
           ))}
         </div>
@@ -171,7 +171,7 @@ export default function PricingPage() {
 
       {/* Add-ons */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Popular Add-ons
         </h2>
 
@@ -208,9 +208,9 @@ export default function PricingPage() {
               price: 'Add 10% to plan',
             },
           ].map((addon) => (
-            <div key={addon.name} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{addon.name}</h3>
-              <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
+            <div key={addon.name} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{addon.name}</h3>
+              <p className="text-muted-foreground text-sm mb-4">{addon.description}</p>
               <p className="text-primary font-semibold">{addon.price}</p>
             </div>
           ))}

@@ -33,11 +33,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold text-dark mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-semibold text-dark mb-2">Email</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Email</h3>
                   <a
                     href="mailto:contact.pyronets@gmail.com"
                     className="text-primary hover:text-secondary transition-colors"
@@ -47,17 +47,17 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-dark mb-2">Response Time</h3>
-                  <p className="text-gray-600">We typically respond within 2 hours during business hours.</p>
+                  <h3 className="font-semibold text-foreground mb-2">Response Time</h3>
+                  <p className="text-muted-foreground">We typically respond within 2 hours during business hours.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-dark mb-2">Available</h3>
-                  <p className="text-gray-600">Monday - Friday, 9 AM - 6 PM EST</p>
+                  <h3 className="font-semibold text-foreground mb-2">Available</h3>
+                  <p className="text-muted-foreground">Monday - Friday, 9 AM - 6 PM EST</p>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-dark mb-2">Follow Us</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Follow Us</h3>
                   <div className="flex gap-4">
                     <a
                       href="https://linkedin.com/company/pyronets"
@@ -82,63 +82,63 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-dark mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
 
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Your Name
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
                     placeholder="you@company.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Company
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
                     placeholder="Company Name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Message
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
                     placeholder="Tell us about your web scraping needs..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Send Message
                 </button>
               </form>
 
-              <p className="text-xs text-gray-500 mt-4">
-                We'll get back to you as soon as possible.
+              <p className="text-xs text-muted-foreground mt-4">
+                {"We'll get back to you as soon as possible."}
               </p>
             </div>
           </div>
@@ -147,47 +147,47 @@ export default function ContactPage() {
 
       {/* Other Ways to Connect */}
       <Section background="light">
-        <h2 className="text-3xl font-bold text-dark mb-8 text-center">
+        <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
           Other Ways to Get Started
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg p-6 border border-gray-200 text-center">
-            <h3 className="text-xl font-bold text-dark mb-2">Free Trial</h3>
-            <p className="text-gray-600 mb-4">
+          <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
+            <h3 className="text-xl font-bold text-foreground mb-2">Free Trial</h3>
+            <p className="text-muted-foreground mb-4">
               Start with a free trial. Test our service with your data.
             </p>
             <a
               href="/web-scraping-services"
-              className="text-primary font-semibold hover:text-secondary"
+              className="text-primary font-semibold hover:text-secondary transition-colors"
             >
-              Learn More →
+              Learn More &#8594;
             </a>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-gray-200 text-center">
-            <h3 className="text-xl font-bold text-dark mb-2">View Pricing</h3>
-            <p className="text-gray-600 mb-4">
+          <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
+            <h3 className="text-xl font-bold text-foreground mb-2">View Pricing</h3>
+            <p className="text-muted-foreground mb-4">
               Check out our transparent pricing plans and pick what works for you.
             </p>
             <a
               href="/prices"
-              className="text-primary font-semibold hover:text-secondary"
+              className="text-primary font-semibold hover:text-secondary transition-colors"
             >
-              See Plans →
+              See Plans &#8594;
             </a>
           </div>
 
-          <div className="bg-white rounded-lg p-6 border border-gray-200 text-center">
-            <h3 className="text-xl font-bold text-dark mb-2">Schedule a Call</h3>
-            <p className="text-gray-600 mb-4">
-              Book a demo with our team. We'll walk you through everything.
+          <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
+            <h3 className="text-xl font-bold text-foreground mb-2">Schedule a Call</h3>
+            <p className="text-muted-foreground mb-4">
+              Book a demo with our team. {"We'll"} walk you through everything.
             </p>
             <a
               href="mailto:contact.pyronets@gmail.com"
-              className="text-primary font-semibold hover:text-secondary"
+              className="text-primary font-semibold hover:text-secondary transition-colors"
             >
-              Schedule Call →
+              Schedule Call &#8594;
             </a>
           </div>
         </div>

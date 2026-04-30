@@ -84,7 +84,7 @@ export default function ProductDataScrapingPage() {
 
       {/* What We Extract */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           What We Can Extract
         </h2>
 
@@ -115,12 +115,12 @@ export default function ProductDataScrapingPage() {
               items: ['Seller Name', 'Rating', 'Fulfillment Type', 'Return Policy', 'Contact Info'],
             },
           ].map((category) => (
-            <div key={category.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-4">{category.title}</h3>
+            <div key={category.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-4">{category.title}</h3>
               <ul className="space-y-2">
                 {category.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-gray-600">
-                    <span className="text-secondary">✓</span>
+                  <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="text-secondary">&#10003;</span>
                     {item}
                   </li>
                 ))}
@@ -132,7 +132,7 @@ export default function ProductDataScrapingPage() {
 
       {/* Use Cases */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Common Use Cases
         </h2>
 
@@ -164,8 +164,8 @@ export default function ProductDataScrapingPage() {
             },
           ].map((useCase, idx) => (
             <div key={idx} className="border-l-4 border-primary pl-6">
-              <h3 className="text-xl font-bold text-dark mb-2">{useCase.title}</h3>
-              <p className="text-gray-600">{useCase.description}</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">{useCase.title}</h3>
+              <p className="text-muted-foreground">{useCase.description}</p>
             </div>
           ))}
         </div>
@@ -173,7 +173,7 @@ export default function ProductDataScrapingPage() {
 
       {/* Technical Features */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Technical Features
         </h2>
 
@@ -204,9 +204,9 @@ export default function ProductDataScrapingPage() {
               description: '50+ automated checks ensure data completeness, accuracy, and consistency.',
             },
           ].map((feature) => (
-            <div key={feature.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+            <div key={feature.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -214,7 +214,7 @@ export default function ProductDataScrapingPage() {
 
       {/* FAQ */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12">
+        <h2 className="text-4xl font-bold text-foreground mb-12">
           Questions?
         </h2>
         <FAQ faqs={faqs} />

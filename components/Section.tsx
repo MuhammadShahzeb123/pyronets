@@ -1,12 +1,12 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useRef, useEffect, useState } from 'react';
 
 interface Section {
   id?: string;
   children: ReactNode;
   className?: string;
-  background?: 'white' | 'light' | 'dark';
+  background?: 'default' | 'light' | 'dark' | 'white';
   container?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
@@ -14,13 +14,35 @@ export function Section({
   id,
   children,
   className = '',
-  background = 'white',
+  background = 'default',
   container = 'lg',
 }: Section) {
+  const ref = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-100px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const bgClasses = {
-    white: 'bg-white',
-    light: 'bg-gray-50',
-    dark: 'bg-dark text-white',
+    default: 'bg-transparent',
+    white: 'bg-transparent',
+    light: 'glass',
+    dark: 'bg-card/50 backdrop-blur-sm',
   };
 
   const containerClasses = {
@@ -33,9 +55,14 @@ export function Section({
   return (
     <section
       id={id}
-      className={`${bgClasses[background]} py-16 md:py-24 ${className}`}
+      ref={ref}
+      className={`${bgClasses[background]} py-16 md:py-24 relative ${className}`}
     >
-      <div className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8`}>
+      <div
+        className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-600 ease-out ${
+          isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
         {children}
       </div>
     </section>

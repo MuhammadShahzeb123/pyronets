@@ -44,15 +44,15 @@ export default function AboutPage() {
       {/* Mission */}
       <Section background="light">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-dark mb-6 text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
             Our Mission
           </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Pyronets was founded to simplify how enterprises access and leverage web data. We believe that
             accurate, timely data should be accessible to any business — without the complexity of building
             and maintaining in-house web scraping infrastructure.
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             We serve 200+ enterprises across e-commerce, finance, real estate, and technology industries,
             delivering billions of data points daily with 99.8% accuracy.
           </p>
@@ -61,7 +61,7 @@ export default function AboutPage() {
 
       {/* Why Pyronets */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Why Businesses Choose Pyronets
         </h2>
 
@@ -98,9 +98,9 @@ export default function AboutPage() {
                 'Enterprise-grade security, compliance, and data privacy. SOC 2 Type II certified.',
             },
           ].map((reason) => (
-            <div key={reason.title} className="bg-white rounded-lg p-8 border border-gray-200 text-center">
-              <h3 className="text-xl font-bold text-dark mb-4">{reason.title}</h3>
-              <p className="text-gray-600">{reason.description}</p>
+            <div key={reason.title} className="glass glass-hover rounded-xl p-8 text-center transition-all duration-300">
+              <h3 className="text-xl font-bold text-foreground mb-4">{reason.title}</h3>
+              <p className="text-muted-foreground">{reason.description}</p>
             </div>
           ))}
         </div>
@@ -111,26 +111,26 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <p className="text-5xl font-bold text-primary mb-2">200+</p>
-            <p className="text-gray-600 font-semibold">Enterprise Clients</p>
+            <p className="text-muted-foreground font-semibold">Enterprise Clients</p>
           </div>
           <div>
             <p className="text-5xl font-bold text-primary mb-2">10B+</p>
-            <p className="text-gray-600 font-semibold">Data Points/Month</p>
+            <p className="text-muted-foreground font-semibold">Data Points/Month</p>
           </div>
           <div>
             <p className="text-5xl font-bold text-primary mb-2">99.8%</p>
-            <p className="text-gray-600 font-semibold">Data Accuracy</p>
+            <p className="text-muted-foreground font-semibold">Data Accuracy</p>
           </div>
           <div>
             <p className="text-5xl font-bold text-primary mb-2">24/7</p>
-            <p className="text-gray-600 font-semibold">Dedicated Support</p>
+            <p className="text-muted-foreground font-semibold">Dedicated Support</p>
           </div>
         </div>
       </Section>
 
       {/* Team Values */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Our Values
         </h2>
 
@@ -163,8 +163,8 @@ export default function AboutPage() {
             },
           ].map((value) => (
             <div key={value.title} className="border-l-4 border-primary pl-6">
-              <h3 className="text-2xl font-bold text-dark mb-3">{value.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{value.description}</p>
+              <h3 className="text-2xl font-bold text-foreground mb-3">{value.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
 
       {/* Industries */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Industries We Serve
         </h2>
 
@@ -189,7 +189,7 @@ export default function AboutPage() {
           ].map((industry) => (
             <div
               key={industry}
-              className="bg-white rounded-lg p-6 border border-gray-200 text-center font-semibold text-dark"
+              className="glass glass-hover rounded-xl p-6 text-center font-semibold text-foreground transition-all duration-300"
             >
               {industry}
             </div>

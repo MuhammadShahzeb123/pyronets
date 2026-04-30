@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
 
       {/* 5-Step Process */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-16 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-16 text-center">
           The Pyronets Process
         </h2>
 
@@ -104,24 +104,24 @@ export default function HowItWorksPage() {
 
               {/* Step Content */}
               <div className="md:col-span-3">
-                <h3 className="text-2xl font-bold text-dark mb-4">{step.title}</h3>
-                <p className="text-lg text-gray-600 mb-6">{step.description}</p>
+                <h3 className="text-2xl font-bold text-foreground mb-4">{step.title}</h3>
+                <p className="text-lg text-muted-foreground mb-6">{step.description}</p>
 
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <h4 className="font-bold text-dark mb-4">What happens:</h4>
+                <div className="glass rounded-xl p-6">
+                  <h4 className="font-bold text-foreground mb-4">What happens:</h4>
                   <ul className="space-y-3">
                     {step.details.map((detail, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <span className="text-secondary font-bold mt-1">✓</span>
-                        <span className="text-gray-700">{detail}</span>
+                        <span className="text-secondary font-bold mt-1">&#10003;</span>
+                        <span className="text-muted-foreground">{detail}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Timeline */}
-                <div className="mt-6 text-sm text-gray-600">
-                  <strong>Typical timeline:</strong> 1-4 weeks depending on complexity
+                <div className="mt-6 text-sm text-muted-foreground">
+                  <strong className="text-foreground">Typical timeline:</strong> 1-4 weeks depending on complexity
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function HowItWorksPage() {
 
       {/* Timeline Graphic */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Typical Project Timeline
         </h2>
 
@@ -146,17 +146,17 @@ export default function HowItWorksPage() {
             ].map((phase, idx) => (
               <div key={idx} className="text-center">
                 <div
-                  className={`rounded-lg p-4 mb-2 font-bold ${
+                  className={`rounded-xl p-4 mb-2 font-bold ${
                     phase.status === 'complete'
-                      ? 'bg-secondary text-white'
+                      ? 'bg-secondary/20 border border-secondary/40 text-secondary'
                       : phase.status === 'current'
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-200 text-gray-700'
+                      ? 'bg-primary/20 border border-primary/40 text-primary'
+                      : 'glass text-muted-foreground'
                   }`}
                 >
                   Week {phase.week}
                 </div>
-                <p className="text-sm text-gray-600">{phase.label}</p>
+                <p className="text-sm text-muted-foreground">{phase.label}</p>
               </div>
             ))}
           </div>
@@ -165,7 +165,7 @@ export default function HowItWorksPage() {
 
       {/* Support Levels */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Ongoing Support
         </h2>
 
@@ -184,12 +184,12 @@ export default function HowItWorksPage() {
               items: ['Dedicated account manager', 'Priority support (email/phone)', 'Custom adjustments', 'Training & documentation'],
             },
           ].map((support) => (
-            <div key={support.level} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-              <h3 className="text-xl font-bold text-dark mb-6">{support.level}</h3>
+            <div key={support.level} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-xl font-bold text-foreground mb-6">{support.level}</h3>
               <ul className="space-y-3">
                 {support.items.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-gray-700">
-                    <span className="text-secondary font-bold">✓</span>
+                  <li key={idx} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="text-secondary font-bold">&#10003;</span>
                     {item}
                   </li>
                 ))}
@@ -201,7 +201,7 @@ export default function HowItWorksPage() {
 
       {/* FAQ */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Common Questions
         </h2>
 
@@ -217,7 +217,7 @@ export default function HowItWorksPage() {
             },
             {
               q: 'What if the target website changes?',
-              a: 'Our team monitors changes and updates your scraper automatically. You\'ll get alerts if we encounter issues.',
+              a: "Our team monitors changes and updates your scraper automatically. You'll get alerts if we encounter issues.",
             },
             {
               q: 'Can I cancel at any time?',
@@ -229,8 +229,8 @@ export default function HowItWorksPage() {
             },
           ].map((qa, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-bold text-dark mb-3">{qa.q}</h3>
-              <p className="text-gray-600 leading-relaxed">{qa.a}</p>
+              <h3 className="text-lg font-bold text-foreground mb-3">{qa.q}</h3>
+              <p className="text-muted-foreground leading-relaxed">{qa.a}</p>
             </div>
           ))}
         </div>
