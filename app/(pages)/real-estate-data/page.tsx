@@ -58,7 +58,7 @@ export default function RealEstateDataPage() {
 
       {/* What We Extract */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Property Data We Extract
         </h2>
 
@@ -89,12 +89,12 @@ export default function RealEstateDataPage() {
               items: ['Property Photos', 'Floor Plans', 'Virtual Tours', 'Disclosures', 'Inspection Reports'],
             },
           ].map((category) => (
-            <div key={category.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-4">{category.title}</h3>
+            <div key={category.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-4">{category.title}</h3>
               <ul className="space-y-2">
                 {category.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-gray-600">
-                    <span className="text-secondary">✓</span>
+                  <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="text-secondary">&#10003;</span>
                     {item}
                   </li>
                 ))}
@@ -106,7 +106,7 @@ export default function RealEstateDataPage() {
 
       {/* Use Cases */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Real Estate Use Cases
         </h2>
 
@@ -142,8 +142,8 @@ export default function RealEstateDataPage() {
             },
           ].map((useCase) => (
             <div key={useCase.title} className="border-l-4 border-primary pl-6">
-              <h3 className="text-xl font-bold text-dark mb-2">{useCase.title}</h3>
-              <p className="text-gray-600">{useCase.description}</p>
+              <h3 className="text-xl font-bold text-foreground mb-2">{useCase.title}</h3>
+              <p className="text-muted-foreground">{useCase.description}</p>
             </div>
           ))}
         </div>

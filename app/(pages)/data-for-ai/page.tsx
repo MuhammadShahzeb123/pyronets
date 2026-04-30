@@ -59,7 +59,7 @@ export default function DataForAIPage() {
 
       {/* Data Services */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Our AI Data Services
         </h2>
 
@@ -96,9 +96,9 @@ export default function DataForAIPage() {
                 'GDPR compliant data collection and ethical AI practices throughout the process.',
             },
           ].map((service) => (
-            <div key={service.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+            <div key={service.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{service.title}</h3>
+              <p className="text-muted-foreground">{service.description}</p>
             </div>
           ))}
         </div>
@@ -106,7 +106,7 @@ export default function DataForAIPage() {
 
       {/* Data Types */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Types of Training Data
         </h2>
 
@@ -137,12 +137,12 @@ export default function DataForAIPage() {
               items: ['Domain-specific', 'Industry-specific', 'Proprietary formats', 'Multi-modal datasets'],
             },
           ].map((dataType) => (
-            <div key={dataType.title} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-4">{dataType.title}</h3>
+            <div key={dataType.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-4">{dataType.title}</h3>
               <ul className="space-y-2">
                 {dataType.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-gray-600">
-                    <span className="text-secondary">✓</span>
+                  <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="text-secondary">&#10003;</span>
                     {item}
                   </li>
                 ))}
@@ -154,7 +154,7 @@ export default function DataForAIPage() {
 
       {/* Quality Assurance */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Quality Assurance Process
         </h2>
 
@@ -193,13 +193,13 @@ export default function DataForAIPage() {
           ].map((step) => (
             <div key={step.step} className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white font-bold text-lg">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 border border-primary/40 text-primary font-bold text-lg">
                   {step.step}
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-dark mb-1">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-lg font-bold text-foreground mb-1">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
               </div>
             </div>
           ))}

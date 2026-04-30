@@ -84,7 +84,7 @@ export default function CompetitorPriceMonitoringPage() {
 
       {/* Key Benefits */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Monitor Competitor Prices 24/7
         </h2>
 
@@ -116,8 +116,8 @@ export default function CompetitorPriceMonitoringPage() {
             },
           ].map((benefit) => (
             <div key={benefit.title} className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-bold text-dark mb-2">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">{benefit.title}</h3>
+              <p className="text-muted-foreground">{benefit.description}</p>
             </div>
           ))}
         </div>
@@ -125,7 +125,7 @@ export default function CompetitorPriceMonitoringPage() {
 
       {/* Use Cases */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Use Cases
         </h2>
 
@@ -156,9 +156,9 @@ export default function CompetitorPriceMonitoringPage() {
               description: 'Track branded product pricing across all retailers. Monitor brand consistency.',
             },
           ].map((useCase) => (
-            <div key={useCase.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{useCase.title}</h3>
-              <p className="text-gray-600">{useCase.description}</p>
+            <div key={useCase.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{useCase.title}</h3>
+              <p className="text-muted-foreground">{useCase.description}</p>
             </div>
           ))}
         </div>
@@ -166,7 +166,7 @@ export default function CompetitorPriceMonitoringPage() {
 
       {/* Features */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Powerful Features
         </h2>
 
@@ -209,9 +209,9 @@ export default function CompetitorPriceMonitoringPage() {
               description: 'Dedicated monitoring team ensures continuous data delivery.',
             },
           ].map((feature) => (
-            <div key={feature.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-sm">{feature.description}</p>
+            <div key={feature.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -219,7 +219,7 @@ export default function CompetitorPriceMonitoringPage() {
 
       {/* FAQ */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12">
+        <h2 className="text-4xl font-bold text-foreground mb-12">
           Common Questions
         </h2>
         <FAQ faqs={faqs} />

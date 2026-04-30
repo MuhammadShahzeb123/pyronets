@@ -25,7 +25,7 @@ export default function SolutionPage() {
 
       {/* Main Services */}
       <Section id="services">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Core Services
         </h2>
 
@@ -48,7 +48,7 @@ export default function SolutionPage() {
 
       {/* Industry Solutions */}
       <Section background="light" id="industry-solutions">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Industry-Specific Solutions
         </h2>
 
@@ -57,14 +57,14 @@ export default function SolutionPage() {
             <a
               key={solution.id}
               href={solution.href}
-              className="bg-white rounded-lg p-8 border border-gray-200 hover:shadow-lg transition-all group"
+              className="glass glass-hover rounded-xl p-8 transition-all duration-300 group"
             >
-              <h3 className="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {solution.title}
               </h3>
-              <p className="text-gray-600">{solution.description}</p>
-              <div className="mt-4 text-primary font-semibold group-hover:translate-x-2 transition-transform">
-                Explore →
+              <p className="text-muted-foreground">{solution.description}</p>
+              <div className="mt-4 text-primary font-semibold group-hover:translate-x-2 transition-transform inline-block">
+                Explore &#8594;
               </div>
             </a>
           ))}
@@ -73,7 +73,7 @@ export default function SolutionPage() {
 
       {/* Why Choose */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Why Choose Pyronets
         </h2>
 
@@ -105,8 +105,8 @@ export default function SolutionPage() {
             },
           ].map((feature) => (
             <div key={feature.title} className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-bold text-dark mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>

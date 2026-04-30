@@ -22,7 +22,7 @@ export default function SecurityPage() {
 
       {/* Security Features */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Our Security Commitment
         </h2>
 
@@ -59,9 +59,9 @@ export default function SecurityPage() {
                 'Dedicated incident response team, 24/7 monitoring, and documented response procedures.',
             },
           ].map((feature) => (
-            <div key={feature.title} className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+            <div key={feature.title} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -69,8 +69,8 @@ export default function SecurityPage() {
 
       {/* Certifications */}
       <Section>
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
-          Certifications & Compliance
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
+          Certifications &amp; Compliance
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -100,9 +100,9 @@ export default function SecurityPage() {
               description: 'Annual penetration testing and security audits by independent auditors.',
             },
           ].map((item) => (
-            <div key={item.cert} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-              <h3 className="text-lg font-bold text-dark mb-2">{item.cert}</h3>
-              <p className="text-gray-600">{item.description}</p>
+            <div key={item.cert} className="glass glass-hover rounded-xl p-6 transition-all duration-300">
+              <h3 className="text-lg font-bold text-foreground mb-2">{item.cert}</h3>
+              <p className="text-muted-foreground">{item.description}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function SecurityPage() {
 
       {/* Data Privacy */}
       <Section background="light">
-        <h2 className="text-4xl font-bold text-dark mb-12 text-center">
+        <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
           Data Privacy
         </h2>
 
@@ -143,8 +143,8 @@ export default function SecurityPage() {
             },
           ].map((item) => (
             <div key={item.title} className="border-l-4 border-primary pl-6">
-              <h3 className="text-lg font-bold text-dark mb-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+              <p className="text-muted-foreground">{item.description}</p>
             </div>
           ))}
         </div>
@@ -152,14 +152,14 @@ export default function SecurityPage() {
 
       {/* Contact Security Team */}
       <Section>
-        <div className="max-w-2xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-12 text-center border border-primary/20">
-          <h2 className="text-3xl font-bold text-dark mb-4">Security Questions?</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="max-w-2xl mx-auto glass-strong rounded-2xl p-12 text-center border border-primary/20">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Security Questions?</h2>
+          <p className="text-muted-foreground mb-6">
             Our security team is ready to discuss your security and compliance requirements.
           </p>
           <a
             href="mailto:security@pyronets.com"
-            className="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300"
           >
             Contact Security Team
           </a>
