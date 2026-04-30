@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import '@/styles/globals.css';
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +32,7 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} bg-background`}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -38,10 +44,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-white">
-        <div className="flex flex-col min-h-screen">
+      <body className="font-sans antialiased">
+        <div className="flex flex-col min-h-screen relative">
+          {/* Background effects */}
+          <div className="fixed inset-0 bg-grid opacity-30 pointer-events-none" />
+          <div className="fixed inset-0 pointer-events-none overflow-hidden">
+            <div className="orb orb-primary w-96 h-96 -top-48 -left-48" />
+            <div className="orb orb-secondary w-80 h-80 top-1/3 -right-40" />
+            <div className="orb orb-primary w-64 h-64 bottom-0 left-1/4 opacity-20" />
+          </div>
+          
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow relative z-10">
             {children}
           </main>
           <Footer />

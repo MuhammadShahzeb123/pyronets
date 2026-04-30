@@ -1,12 +1,13 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 interface Section {
   id?: string;
   children: ReactNode;
   className?: string;
-  background?: 'white' | 'light' | 'dark';
+  background?: 'default' | 'light' | 'dark' | 'white';
   container?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
@@ -14,13 +15,17 @@ export function Section({
   id,
   children,
   className = '',
-  background = 'white',
+  background = 'default',
   container = 'lg',
 }: Section) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
   const bgClasses = {
-    white: 'bg-white',
-    light: 'bg-gray-50',
-    dark: 'bg-dark text-white',
+    default: 'bg-transparent',
+    white: 'bg-transparent',
+    light: 'glass',
+    dark: 'bg-card/50 backdrop-blur-sm',
   };
 
   const containerClasses = {
@@ -33,11 +38,17 @@ export function Section({
   return (
     <section
       id={id}
-      className={`${bgClasses[background]} py-16 md:py-24 ${className}`}
+      ref={ref}
+      className={`${bgClasses[background]} py-16 md:py-24 relative ${className}`}
     >
-      <div className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8`}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8`}
+      >
         {children}
-      </div>
+      </motion.div>
     </section>
   );
 }
