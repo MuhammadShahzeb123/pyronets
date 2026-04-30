@@ -1,7 +1,6 @@
 'use client';
 
-import { ReactNode, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { ReactNode, useRef, useEffect, useState } from 'react';
 
 interface Section {
   id?: string;
@@ -18,8 +17,26 @@ export function Section({
   background = 'default',
   container = 'lg',
 }: Section) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const ref = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-100px' }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const bgClasses = {
     default: 'bg-transparent',
@@ -41,14 +58,13 @@ export function Section({
       ref={ref}
       className={`${bgClasses[background]} py-16 md:py-24 relative ${className}`}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8`}
+      <div
+        className={`${containerClasses[container]} mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-600 ease-out ${
+          isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
       >
         {children}
-      </motion.div>
+      </div>
     </section>
   );
 }

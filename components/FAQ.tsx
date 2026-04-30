@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQItemProps {
   question: string;
@@ -19,22 +18,19 @@ export function FAQItem({ question, answer, isOpen: initialOpen, index = 0 }: FA
   const [isOpen, setIsOpen] = useState(initialOpen ?? false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="glass rounded-xl overflow-hidden"
+    <div
+      className="glass rounded-xl overflow-hidden animate-fade-in-up"
+      style={{ animationDelay: `${index * 50}ms` }}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex justify-between items-center w-full text-left p-6 font-semibold text-foreground hover:text-primary transition-colors duration-300"
       >
         <span className="pr-4">{question}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center"
+        <div
+          className={`flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center transition-transform duration-200 ${
+            isOpen ? 'rotate-45' : 'rotate-0'
+          }`}
         >
           <svg
             className="w-4 h-4 text-primary"
@@ -44,26 +40,23 @@ export function FAQItem({ question, answer, isOpen: initialOpen, index = 0 }: FA
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
-        </motion.div>
+        </div>
       </button>
       
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            <div className="px-6 pb-6">
-              <div className="pt-2 border-t border-border">
-                <p className="mt-4 text-muted-foreground leading-relaxed">{answer}</p>
-              </div>
+      <div
+        className={`grid transition-all duration-300 ease-out ${
+          isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-6 pb-6">
+            <div className="pt-2 border-t border-border">
+              <p className="mt-4 text-muted-foreground leading-relaxed">{answer}</p>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -71,14 +64,9 @@ export function FAQ({ faqs, title }: FAQProps) {
   return (
     <div className="space-y-4">
       {title && (
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-2xl font-bold text-foreground mb-8"
-        >
+        <h2 className="text-2xl font-bold text-foreground mb-8 animate-fade-in-up">
           {title}
-        </motion.h2>
+        </h2>
       )}
       {faqs.map((faq, idx) => (
         <FAQItem

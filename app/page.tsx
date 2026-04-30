@@ -1,5 +1,3 @@
-'use client';
-
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -7,7 +5,6 @@ import { CTABanner } from '@/components/CTABanner';
 import { FAQ } from '@/components/FAQ';
 import { SERVICES, CTA_VARIANTS } from '@/lib/constants';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 const faqs = [
   {
@@ -82,26 +79,17 @@ export default function Home() {
       <Section background="light">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="text-center p-6 glass rounded-xl"
+              className="text-center p-6 glass rounded-xl animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <motion.p
-                initial={{ scale: 0.5 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + index * 0.1, type: 'spring', stiffness: 200 }}
-                className="text-4xl md:text-5xl font-bold text-gradient mb-2"
-              >
+              <p className="text-4xl md:text-5xl font-bold text-gradient mb-2">
                 {stat.value}
                 <span className="text-secondary">{stat.suffix}</span>
-              </motion.p>
+              </p>
               <p className="text-muted-foreground font-medium">{stat.label}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
@@ -109,32 +97,15 @@ export default function Home() {
       {/* Main Services */}
       <Section id="services">
         <div className="mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-primary mb-4"
-          >
+          <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-primary mb-4 animate-fade-in-up">
             Our Services
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance"
-          >
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance animate-fade-in-up delay-100">
             Data Solutions for Every Industry
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
-          >
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed animate-fade-in-up delay-200">
             From competitive pricing to AI training data, we deliver accurate web data at enterprise scale.
-          </motion.p>
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -154,67 +125,42 @@ export default function Home() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-14 text-center"
-        >
+        <div className="mt-14 text-center animate-fade-in-up delay-500">
           <Link
             href="/solution"
-            className="inline-flex items-center gap-2 px-8 py-4 glass rounded-xl font-semibold text-foreground hover:text-primary glass-hover transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 glass rounded-xl font-semibold text-foreground hover:text-primary glass-hover transition-all duration-300 group"
           >
             View All Solutions
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </Section>
 
       {/* How It Works */}
       <Section background="dark" id="how-it-works">
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-secondary mb-4"
-          >
+          <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-secondary mb-4 animate-fade-in-up">
             How It Works
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-foreground"
-          >
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground animate-fade-in-up delay-100">
             How Pyronets Works
-          </motion.h2>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((item, index) => (
-            <motion.div
+            <div
               key={item.step}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="relative group"
+              className="relative group animate-fade-in-up"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="glass rounded-xl p-8 h-full glass-hover transition-all duration-300">
+              <div className="glass rounded-xl p-8 h-full glass-hover transition-all duration-300 hover:-translate-y-1">
                 {/* Step number */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + index * 0.1, type: 'spring' }}
-                  className="text-5xl font-bold text-gradient mb-6"
-                >
+                <div className="text-5xl font-bold text-gradient mb-6">
                   {item.step}
-                </motion.div>
+                </div>
                 
                 {/* Connector line */}
                 {index < steps.length - 1 && (
@@ -226,7 +172,7 @@ export default function Home() {
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
@@ -234,23 +180,12 @@ export default function Home() {
       {/* FAQ Section */}
       <Section>
         <div className="mb-12">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-primary mb-4"
-          >
+          <span className="inline-block px-4 py-2 glass rounded-full text-sm font-medium text-primary mb-4 animate-fade-in-up">
             FAQ
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-foreground"
-          >
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground animate-fade-in-up delay-100">
             Frequently Asked Questions
-          </motion.h2>
+          </h2>
         </div>
         <div className="max-w-3xl">
           <FAQ faqs={faqs} />
