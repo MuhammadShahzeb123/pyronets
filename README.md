@@ -200,6 +200,76 @@ All components are fully responsive:
 - Fast loading times
 - XML sitemap support
 
+## 🔐 HTTPS Configuration (REQUIRED for Production)
+
+All PRs MUST include proper HTTPS configuration. Do not deploy without HTTPS.
+
+### Self-Hosted HTTPS Setup
+
+1. **Generate SSL Certificates** (on server):
+```bash
+mkdir -p ssl
+openssl req -x509 -newkey rsa:2048 -keyout ssl/key.pem -out ssl/cert.pem -days 365 -nodes -subj '/CN=yourdomain.com'
+```
+
+2. **Environment Variables**:
+```bash
+export SSL_KEY_PATH=./ssl/key.pem
+export SSL_CERT_PATH=./ssl/cert.pem
+export PORT=80
+```
+
+3. **Start Server with HTTPS**:
+```bash
+# Using custom server.js (recommended for HTTPS)
+node server.js
+
+# Or set environment variables and run:
+SSL_KEY_PATH=./ssl/key.pem SSL_CERT_PATH=./ssl/cert.pem node server.js
+```
+
+4. **For Production with Real SSL** (Let's Encrypt):
+```bash
+# Install certbot
+sudo apt install certbot python3-certbot-nginx
+
+# Generate certificate
+sudo certbot --nginx -d pyronets.com -d www.pyronets.com
+
+# Or for standalone (Next.js must be running):
+sudo certbot certonly --standalone -d pyronets.com -d www.pyronets.com
+```
+
+5. **Update nginx config** (if using nginx as reverse proxy):
+```nginx
+server {
+    listen 80;
+    server_name pyronets.com www.pyronets.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name pyronets.com www.pyronets.com;
+    
+    ssl_certificate /etc/letsencrypt/live/pyronets.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pyronets.com/privkey.pem;
+    
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+### Cloudflare SSL Settings
+If using Cloudflare, set SSL/TLS mode to:
+- **Full** (strict) - recommended for self-hosted
+- **Flexible** - not recommended (security risk)
+
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
