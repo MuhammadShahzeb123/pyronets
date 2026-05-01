@@ -2,6 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  // Enable static generation for faster page loads
+  output: 'standalone',
+  // Prefetch pages in viewport for faster navigation
+  experimental: {
+    optimizeCss: true,
+  },
+  // Compression
+  compress: true,
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
