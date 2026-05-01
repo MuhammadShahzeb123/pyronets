@@ -14,7 +14,6 @@ interface HeroProps {
   children?: ReactNode;
 }
 
-// CSS-based data particles - much lighter than framer-motion
 function DataParticles() {
   // Reduced from 20 to 8 particles for better performance
   const particles = [
