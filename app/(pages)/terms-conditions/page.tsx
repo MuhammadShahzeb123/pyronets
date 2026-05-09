@@ -22,9 +22,9 @@ export default function TermsPage() {
 
       {/* Content */}
       <Section>
-        <div className="max-w-3xl mx-auto prose prose-lg text-gray-700 space-y-8">
+        <div className="max-w-3xl mx-auto prose prose-lg text-muted-foreground space-y-8">
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">1. Agreement to Terms</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">1. Agreement to Terms</h2>
             <p>
               These Terms of Service ("Terms") constitute a legally binding agreement between you and Pyronets ("Company," "we,"
               "us," or "our") governing your use of our website, web scraping services, and related services (collectively, the
@@ -33,7 +33,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">2. Use License</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">2. Use License</h2>
             <p>
               Permission is granted to temporarily download one copy of the materials (information or software) on Pyronets's Service
               for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under
@@ -49,7 +49,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">3. Disclaimer</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">3. Disclaimer</h2>
             <p>
               The materials on Pyronets's Service are provided on an "as is" basis. Pyronets makes no warranties, expressed or implied,
               and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of
@@ -58,7 +58,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">4. Limitations</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">4. Limitations</h2>
             <p>
               In no event shall Pyronets or its suppliers be liable for any damages (including, without limitation, damages for loss of
               data or profit, or due to business interruption) arising out of the use or inability to use the materials on Pyronets's
@@ -68,7 +68,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">5. Accuracy of Materials</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">5. Accuracy of Materials</h2>
             <p>
               The materials appearing on Pyronets's Service could include technical, typographical, or photographic errors. Pyronets does
               not warrant that any of the materials on its Service are accurate, complete, or current. Pyronets may make changes to the
@@ -77,7 +77,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">6. Links</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">6. Links</h2>
             <p>
               Pyronets has not reviewed all of the sites linked to its Service and is not responsible for the contents of any such linked
               site. The inclusion of any link does not imply endorsement by Pyronets of the site. Use of any such linked website is at the
@@ -86,7 +86,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">7. Modifications</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">7. Modifications</h2>
             <p>
               Pyronets may revise these terms of service for its Service at any time without notice. By using this Service, you are
               agreeing to be bound by the then current version of these terms of service.
@@ -94,7 +94,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-dark mb-4">8. Contact Information</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">8. Contact Information</h2>
             <p>
               If you have any questions about these Terms, please contact us at:
               <br />
