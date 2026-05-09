@@ -9,14 +9,14 @@ export function organizationSchema() {
     url: 'https://pyronets.com/',
     logo: 'https://pyronets.com/assets/images/logo.svg',
     description: 'Managed web scraping and data extraction services for enterprises.',
-    email: 'contact.pyronets@gmail.com',
+      email: 'contactus@pyronets.com',
     sameAs: [
       'https://linkedin.com/company/pyronets',
       'https://twitter.com/pyronets',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'contact.pyronets@gmail.com',
+    email: 'contactus@pyronets.com',
       contactType: 'Customer Service',
       availableLanguage: 'English',
     },

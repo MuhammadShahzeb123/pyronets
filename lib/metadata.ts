@@ -8,7 +8,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://pyronets.com',
   ogImage: '/og-pyronets.png',
   twitterHandle: '@pyronets',
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact.pyronets@gmail.com',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contactus@pyronets.com',
   linkedIn: 'https://linkedin.com/company/pyronets',
   socialLinks: {
     twitter: 'https://twitter.com/pyronets',

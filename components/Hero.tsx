@@ -47,15 +47,15 @@ function DataParticles() {
 // Static code lines visual - no JS animation
 function ScrapingVisual() {
   const codeLines = [
-    '{ "data": "extracting..." }',
-    '<html> parsing content </html>',
-    'API response: 200 OK',
-    'Records: 10,000+ fetched',
-    'Quality: 99.8% verified',
+    '{ "status": "success" }',
+    'Scraping: competitor_prices',
+    'Records extracted: 10,000+',
+    'Quality check: PASSED ✓',
+    'Delivery: API ready',
   ];
 
   return (
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block w-96 opacity-30">
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block w-96 opacity-25">
       <div className="glass rounded-xl p-4 font-mono text-xs space-y-2">
         {codeLines.map((line, index) => (
           <div
@@ -83,18 +83,18 @@ export function Hero({
     <div className="relative min-h-[85vh] flex items-center py-16 md:py-24 overflow-hidden">
       <DataParticles />
       <ScrapingVisual />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl space-y-8">
-          {/* Badge */}
+          {/* Subtle trust badge */}
           <div className="animate-fade-in-up">
             <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-muted-foreground">
               <span className="w-2 h-2 rounded-full bg-secondary pulse-glow" />
-              Enterprise-Grade Data Extraction
+              200+ Enterprises Trust Pyronets
             </span>
           </div>
 
-          {/* Title */}
+          {/* Title - Outcome-focused */}
           <div className="animate-fade-in-up delay-100">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-balance">
               <span className="text-foreground">{title}</span>
@@ -103,14 +103,14 @@ export function Hero({
             </h1>
           </div>
 
-          {/* Description */}
+          {/* Description - Problem-aware, solution-focused */}
           {description && (
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-in-up delay-200">
               {description}
             </p>
           )}
 
-          {/* CTA */}
+          {/* CTA - Action-oriented */}
           {cta && (
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up delay-300">
               <Link
@@ -131,12 +131,12 @@ export function Hero({
                   </svg>
                 </span>
               </Link>
-              
+
               <Link
-                href="/how-it-works"
+                href="/solution"
                 className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-xl glass glass-hover transition-all duration-300 text-foreground hover:-translate-y-0.5"
               >
-                See How It Works
+                View All Solutions
               </Link>
             </div>
           )}
@@ -144,7 +144,7 @@ export function Hero({
           {children}
         </div>
       </div>
-      
+
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </div>

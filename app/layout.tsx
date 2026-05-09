@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Header } from '@/components/layout/Header';
@@ -10,13 +10,18 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#6C63FF',
+};
+
 export const metadata: Metadata = {
   title: {
     template: '%s | Pyronets',
     default: 'Web Scraping Services | Pyronets',
   },
   description: 'Enterprise web scraping and data extraction services for businesses worldwide.',
-  viewport: 'width=device-width, initial-scale=1.0',
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   icons: {
     icon: '/favicon.svg',
