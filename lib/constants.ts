@@ -26,12 +26,12 @@ export interface PageContent {
 export const SERVICES: ServiceItem[] = [
   {
     id: 'web-scraping-services',
-    title: 'Managed Web Scraping Services',
+    title: 'Enterprise Web Scraping',
     slug: 'web-scraping-services',
-    description: 'Professional managed web scraping services tailored for your business.',
+    description: 'Full-service web scraping solutions for 200+ enterprises worldwide.',
     keyword: 'managed web scraping services',
     icon: '🌐',
-    fullDescription: 'Full-service web scraping solutions for enterprise businesses.',
+    fullDescription: 'Full-service web scraping solutions for enterprise businesses. Delivering accurate, large-scale data with 99.8% precision and 24/7 dedicated support.',
     features: [
       'Anti-bot bypass and detection',
       'JavaScript rendering support',
@@ -47,10 +47,10 @@ export const SERVICES: ServiceItem[] = [
     id: 'competitor-price-monitoring',
     title: 'Competitor Price Monitoring',
     slug: 'competitor-price-monitoring',
-    description: 'Real-time competitor price monitoring service.',
+    description: 'Real-time competitor pricing data to maximize your profits.',
     keyword: 'competitor price monitoring',
     icon: '📈',
-    fullDescription: 'Track competitor pricing across thousands of products in real-time.',
+    fullDescription: 'Stay ahead with accurate, real-time competitor pricing data. Maximize your profits and streamline operations with reliable web scraping solutions.',
     features: [
       'Real-time price tracking',
       'Automated alerts',
@@ -69,7 +69,7 @@ export const SERVICES: ServiceItem[] = [
     description: 'Accurate product data scraping and matching across e-commerce sites.',
     keyword: 'product data scraping',
     icon: '📦',
-    fullDescription: 'Comprehensive product information from any e-commerce platform at scale.',
+    fullDescription: 'Comprehensive product information from any e-commerce platform at scale. Achieve precise product matching and drive better business decisions.',
     features: [
       'Multi-source product data',
       'Product matching & deduplication',
@@ -88,7 +88,7 @@ export const SERVICES: ServiceItem[] = [
     description: 'High-volume, clean web data for training machine learning models.',
     keyword: 'AI training data web scraping',
     icon: '🤖',
-    fullDescription: 'Custom web scraping pipelines for AI data collection.',
+    fullDescription: 'Custom web scraping pipelines for AI data collection. Power your machine learning models with dependable, high-quality data.',
     features: [
       'Large-scale data collection',
       'Data quality assurance',
@@ -107,7 +107,7 @@ export const SERVICES: ServiceItem[] = [
     description: 'Real estate data scraping service for agencies and investors.',
     keyword: 'real estate data scraping',
     icon: '🏠',
-    fullDescription: 'Track property listings, prices, and market trends automatically.',
+    fullDescription: 'Track property listings, prices, and market trends automatically. Unlock accurate property information and market trends to make informed investment decisions.',
     features: [
       'Property listing data',
       'Market analysis',
@@ -126,7 +126,7 @@ export const SERVICES: ServiceItem[] = [
     description: 'Collect millions of job postings from any job board automatically.',
     keyword: 'job listings data collection',
     icon: '💼',
-    fullDescription: 'Structured job listings data for recruitment intelligence.',
+    fullDescription: 'Structured job listings data for recruitment intelligence. Gather millions of job postings to gain a competitive edge in hiring and workforce planning.',
     features: [
       'Multi-board aggregation',
       'Skill analysis',

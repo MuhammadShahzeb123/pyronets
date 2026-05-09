@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
+import ContactForm from '@/components/ContactForm';
 import { CTABanner } from '@/components/CTABanner';
 import { generateMetadata } from '@/lib/metadata';
 import { CTA_VARIANTS } from '@/lib/constants';
@@ -22,9 +23,9 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <Hero
-        title="Get in"
-        subtitle="Touch"
-        description="Have questions about our web scraping services? Let's talk. We'll discuss your needs and provide a custom proposal."
+        title="Web Scraping Services"
+        subtitle="That Drive Results"
+        description="Maximize your profits and streamline operations with a reliable web scraping partner by your side. Let's discuss your needs and provide a custom proposal."
       />
 
       {/* Contact Form Section */}
@@ -39,10 +40,10 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Email</h3>
                   <a
-                    href="mailto:contact.pyronets@gmail.com"
+                    href="mailto:contactus@pyronets.com"
                     className="text-primary hover:text-secondary transition-colors"
                   >
-                    contact.pyronets@gmail.com
+                    contactus@pyronets.com
                   </a>
                 </div>
 
@@ -83,63 +84,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
-
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="you@company.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="Company Name"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    rows={5}
-                    className="w-full px-4 py-2 glass rounded-lg focus:outline-none focus:border-primary/60 text-foreground placeholder:text-muted-foreground transition-colors"
-                    placeholder="Tell us about your web scraping needs..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-
-              <p className="text-xs text-muted-foreground mt-4">
-                {"We'll get back to you as soon as possible."}
-              </p>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -155,7 +100,7 @@ export default function ContactPage() {
           <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
             <h3 className="text-xl font-bold text-foreground mb-2">Free Trial</h3>
             <p className="text-muted-foreground mb-4">
-              Start with a free trial. Test our service with your data.
+              Start with a free trial. Test our service with your data and see the quality for yourself.
             </p>
             <a
               href="/web-scraping-services"
@@ -168,7 +113,7 @@ export default function ContactPage() {
           <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
             <h3 className="text-xl font-bold text-foreground mb-2">View Pricing</h3>
             <p className="text-muted-foreground mb-4">
-              Check out our transparent pricing plans and pick what works for you.
+              Check out our transparent pricing plans and pick what works for your enterprise.
             </p>
             <a
               href="/prices"
@@ -181,10 +126,10 @@ export default function ContactPage() {
           <div className="glass glass-hover rounded-xl p-6 text-center transition-all duration-300">
             <h3 className="text-xl font-bold text-foreground mb-2">Schedule a Call</h3>
             <p className="text-muted-foreground mb-4">
-              Book a demo with our team. {"We'll"} walk you through everything.
+              Book a demo with our team. We'll walk you through everything and answer your questions.
             </p>
             <a
-              href="mailto:contact.pyronets@gmail.com"
+              href="mailto:contactus@pyronets.com"
               className="text-primary font-semibold hover:text-secondary transition-colors"
             >
               Schedule Call &#8594;
@@ -196,10 +141,10 @@ export default function ContactPage() {
       {/* FAQ CTA */}
       <CTABanner
         title="Questions About Our Services?"
-        description="Check out our FAQ or reach out directly. We're here to help."
+        description="Check out our FAQ or reach out directly. We're here to help you achieve better results with web scraping."
         buttons={[
           { label: 'View FAQ', href: '/web-scraping-learning-center', variant: 'primary' },
-          { label: 'Email Us', href: 'mailto:contact.pyronets@gmail.com', variant: 'secondary' },
+          { label: 'Email Us', href: 'mailto:contactus@pyronets.com', variant: 'secondary' },
         ]}
       />
     </>

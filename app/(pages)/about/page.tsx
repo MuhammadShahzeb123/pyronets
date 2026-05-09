@@ -36,25 +36,26 @@ export default function AboutPage() {
 
       {/* Hero */}
       <Hero
-        title="About"
-        subtitle="Pyronets"
-        description="Enterprise web scraping and data extraction solutions for businesses worldwide. Founded on principles of reliability, accuracy, and customer success."
+        title="A Leading Web Scraping"
+        subtitle="Company You Can Trust"
+        description="Full-service web scraping for enterprises, delivering accurate, real-time data with customized, partner-focused solutions."
       />
 
       {/* Mission */}
       <Section background="light">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-foreground mb-6 text-center">
             Our Mission
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center">
             Pyronets was founded to simplify how enterprises access and leverage web data. We believe that
             accurate, timely data should be accessible to any business — without the complexity of building
             and maintaining in-house web scraping infrastructure.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We serve 200+ enterprises across e-commerce, finance, real estate, and technology industries,
-            delivering billions of data points daily with 99.8% accuracy.
+          <p className="text-lg text-muted-foreground leading-relaxed text-center">
+            Since then, we've consistently exceeded customer expectations. From diving deep into the web to
+            delivering data in a format that perfectly fits your needs, Pyronets empowers businesses to focus
+            on what they do best—driving growth and success.
           </p>
         </div>
       </Section>
@@ -62,7 +63,7 @@ export default function AboutPage() {
       {/* Why Pyronets */}
       <Section>
         <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
-          Why Businesses Choose Pyronets
+          Web Scraping Services That Drive Results
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -70,17 +71,17 @@ export default function AboutPage() {
             {
               title: 'Reliability',
               description:
-                'Our infrastructure is built for enterprise scale. 99.8% uptime with 24/7 dedicated support.',
+                'Enterprise-grade infrastructure built for scale. 99.8% uptime with 24/7 dedicated support.',
             },
             {
               title: 'Expertise',
               description:
-                'Our team has 10+ years combined experience in web scraping, data engineering, and anti-bot systems.',
+                '10+ years combined experience in web scraping, data engineering, and anti-bot systems.',
             },
             {
               title: 'Speed',
               description:
-                'From requirement to delivery in days. We build, test, and deploy custom scrapers quickly.',
+                'Requirement to delivery in days. We build, test, and deploy custom scrapers quickly.',
             },
             {
               title: 'Accuracy',
@@ -90,7 +91,7 @@ export default function AboutPage() {
             {
               title: 'Flexibility',
               description:
-                'Any data source, any format, any schedule. We integrate with your existing systems seamlessly.',
+                'Any data source, any format, any schedule. Seamless integration with your systems.',
             },
             {
               title: 'Security',
@@ -199,8 +200,8 @@ export default function AboutPage() {
 
       {/* CTA */}
       <CTABanner
-        title="Join 200+ Enterprises Using Pyronets"
-        description="Get started with a free consultation. We'll discuss your data needs and show you what's possible."
+        title="Trusted by Over 200 Companies"
+        description="See why enterprise clients trust Pyronets for data solutions. Get started with a free consultation today."
         buttons={[
           { label: CTA_VARIANTS.primary, href: '/contact', variant: 'primary' },
           { label: 'View Case Studies', href: '/case-studies', variant: 'secondary' },
