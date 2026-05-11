@@ -28,9 +28,30 @@ export function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center glow-primary-sm transition-transform duration-300 group-hover:scale-105">
-              <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div>
+            <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-300 group-hover:scale-105">
+              <defs>
+                <linearGradient id="p-grad-header" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6C63FF" />
+                  <stop offset="100%" stopColor="#00D4AA" />
+                </linearGradient>
+              </defs>
+              <g transform="scale(0.9) translate(2, 0)">
+                <path d="M 6 2 L 6 30 M 6 2 L 18 2 L 26 10 L 26 18 L 18 22 L 6 22 M 6 12 L 16 12 L 21 7 M 16 12 L 21 17 M 6 22 L 14 27" 
+                      fill="none" stroke="url(#p-grad-header)" strokeWidth="3.5" strokeLinejoin="round" />
+                <circle cx="6" cy="2" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="6" cy="12" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="6" cy="22" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="6" cy="30" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="18" cy="2" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="26" cy="10" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="26" cy="18" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="18" cy="22" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="16" cy="12" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="21" cy="7" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="21" cy="17" r="3.5" fill="url(#p-grad-header)" />
+                <circle cx="14" cy="27" r="3.5" fill="url(#p-grad-header)" />
+              </g>
+            </svg>
             <span className="text-xl font-bold text-foreground hidden sm:inline group-hover:text-primary transition-colors duration-300">
               Pyronets
             </span>

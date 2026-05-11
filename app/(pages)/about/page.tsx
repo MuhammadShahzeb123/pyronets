@@ -200,11 +200,11 @@ export default function AboutPage() {
 
       {/* CTA */}
       <CTABanner
-        title="Trusted by Over 200 Companies"
-        description="See why enterprise clients trust Pyronets for data solutions. Get started with a free consultation today."
+        title="Ready to Work With Us?"
+        description="Learn about our commitment to quality and why you should be our first enterprise client. Get started with a free consultation today."
         buttons={[
           { label: CTA_VARIANTS.primary, href: '/contact', variant: 'primary' },
-          { label: 'View Case Studies', href: '/case-studies', variant: 'secondary' },
+          { label: 'Our Commitment', href: '/our-commitment', variant: 'secondary' },
         ]}
       />
     </>

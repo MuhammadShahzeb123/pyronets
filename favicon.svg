@@ -1,0 +1,28 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="p-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C63FF" />
+      <stop offset="100%" stop-color="#00D4AA" />
+    </linearGradient>
+  </defs>
+
+  <g transform="scale(0.9) translate(2, 0)">
+    <path d="M 6 2 L 6 30 M 6 2 L 18 2 L 26 10 L 26 18 L 18 22 L 6 22 M 6 12 L 16 12 L 21 7 M 16 12 L 21 17 M 6 22 L 14 27" 
+          fill="none" stroke="url(#p-grad)" stroke-width="3.5" stroke-linejoin="round" />
+    
+    <circle cx="6" cy="2" r="3.5" fill="url(#p-grad)" />
+    <circle cx="6" cy="12" r="3.5" fill="url(#p-grad)" />
+    <circle cx="6" cy="22" r="3.5" fill="url(#p-grad)" />
+    <circle cx="6" cy="30" r="3.5" fill="url(#p-grad)" />
+    
+    <circle cx="18" cy="2" r="3.5" fill="url(#p-grad)" />
+    <circle cx="26" cy="10" r="3.5" fill="url(#p-grad)" />
+    <circle cx="26" cy="18" r="3.5" fill="url(#p-grad)" />
+    <circle cx="18" cy="22" r="3.5" fill="url(#p-grad)" />
+    
+    <circle cx="16" cy="12" r="3.5" fill="url(#p-grad)" />
+    <circle cx="21" cy="7" r="3.5" fill="url(#p-grad)" />
+    <circle cx="21" cy="17" r="3.5" fill="url(#p-grad)" />
+    <circle cx="14" cy="27" r="3.5" fill="url(#p-grad)" />
+  </g>
+</svg>

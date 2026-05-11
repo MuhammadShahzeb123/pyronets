@@ -29,7 +29,7 @@ export function Footer() {
       title: 'Company',
       links: [
         { label: 'About', href: '/about' },
-        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Our Commitment', href: '/our-commitment' },
         { label: 'Contact', href: '/contact' },
       ],
     },
@@ -54,9 +54,30 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1 animate-fade-in-up">
             <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">P</span>
-              </div>
+              <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="p-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#6C63FF" />
+                    <stop offset="100%" stopColor="#00D4AA" />
+                  </linearGradient>
+                </defs>
+                <g transform="scale(0.9) translate(2, 0)">
+                  <path d="M 6 2 L 6 30 M 6 2 L 18 2 L 26 10 L 26 18 L 18 22 L 6 22 M 6 12 L 16 12 L 21 7 M 16 12 L 21 17 M 6 22 L 14 27" 
+                        fill="none" stroke="url(#p-grad-footer)" strokeWidth="3.5" strokeLinejoin="round" />
+                  <circle cx="6" cy="2" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="6" cy="12" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="6" cy="22" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="6" cy="30" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="18" cy="2" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="26" cy="10" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="26" cy="18" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="18" cy="22" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="16" cy="12" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="21" cy="7" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="21" cy="17" r="3.5" fill="url(#p-grad-footer)" />
+                  <circle cx="14" cy="27" r="3.5" fill="url(#p-grad-footer)" />
+                </g>
+              </svg>
               <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                 Pyronets
               </span>
@@ -64,28 +85,6 @@ export function Footer() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Enterprise-grade web scraping and data extraction services you can trust.
             </p>
-            <div className="flex gap-3">
-              <a
-                href={siteConfig.socialLinks.twitter}
-                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-white/10 hover:scale-110 transition-all duration-300"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href={siteConfig.socialLinks.linkedin}
-                className="w-10 h-10 glass rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-white/10 hover:scale-110 transition-all duration-300"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
-            </div>
           </div>
 
           {/* Footer Links */}

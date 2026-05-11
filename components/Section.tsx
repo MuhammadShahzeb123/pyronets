@@ -41,7 +41,7 @@ export function Section({
   const bgClasses = {
     default: 'bg-transparent',
     white: 'bg-transparent',
-    light: 'bg-gray-50',
+    light: 'bg-white/[0.03] backdrop-blur-sm',
     dark: 'bg-card/50 backdrop-blur-sm',
   };
 

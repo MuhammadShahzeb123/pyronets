@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
+            <div className="glass rounded-xl p-8 animate-fade-in-up transition-all duration-300">
               <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
 
               <div className="space-y-6">
@@ -55,28 +55,6 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Available</h3>
                   <p className="text-muted-foreground">Monday - Friday, 9 AM - 6 PM EST</p>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">Follow Us</h3>
-                  <div className="flex gap-4">
-                    <a
-                      href="https://linkedin.com/company/pyronets"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-secondary transition-colors"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      href="https://twitter.com/pyronets"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-secondary transition-colors"
-                    >
-                      Twitter
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
