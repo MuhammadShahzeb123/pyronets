@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'How often can financial data be updated?',
-    answer: 'Update frequency is completely customizable — real-time streaming, hourly, daily, or weekly. We design the scraper to match your trading frequency and data freshness requirements.',
+    answer: 'You choose. Real-time streaming, hourly, daily, or weekly. We build it to match how you trade.',
   },
   {
     question: 'Is web scraping legal for financial data?',

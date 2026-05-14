@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     question: 'How often can data be updated?',
-    answer: 'Update frequency is completely customizable — hourly, daily, weekly, or real-time streaming. We design the scraper to match your data freshness requirements.',
+    answer: 'You decide. Hourly, daily, weekly, or real-time streaming. We build the scraper to match your needs.',
   },
   {
     question: 'What format is data delivered in?',

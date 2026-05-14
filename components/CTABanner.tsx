@@ -31,7 +31,7 @@ export function CTABanner({
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="glass-strong rounded-2xl p-10 md:p-14 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground text-balance animate-fade-in-up delay-100">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground animate-fade-in-up delay-100">
             {title}
           </h2>
           

@@ -30,7 +30,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'web-scraping-services',
     description: 'Full-service web scraping solutions for 200+ enterprises worldwide.',
     keyword: 'managed web scraping services',
-    icon: '🌐',
+    icon: 'globe',
     fullDescription: 'Full-service web scraping solutions for enterprise businesses. Delivering accurate, large-scale data with 99.8% precision and 24/7 dedicated support.',
     features: [
       'Anti-bot bypass and detection',
@@ -49,7 +49,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'competitor-price-monitoring',
     description: 'Real-time competitor pricing data to maximize your profits.',
     keyword: 'competitor price monitoring',
-    icon: '📈',
+    icon: 'trendingUp',
     fullDescription: 'Stay ahead with accurate, real-time competitor pricing data. Maximize your profits and streamline operations with reliable web scraping solutions.',
     features: [
       'Real-time price tracking',
@@ -68,7 +68,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'product-data-scraping',
     description: 'Accurate product data scraping and matching across e-commerce sites.',
     keyword: 'product data scraping',
-    icon: '📦',
+    icon: 'package',
     fullDescription: 'Comprehensive product information from any e-commerce platform at scale. Achieve precise product matching and drive better business decisions.',
     features: [
       'Multi-source product data',
@@ -87,7 +87,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'data-for-ai',
     description: 'High-volume, clean web data for training machine learning models.',
     keyword: 'AI training data web scraping',
-    icon: '🤖',
+    icon: 'bot',
     fullDescription: 'Custom web scraping pipelines for AI data collection. Power your machine learning models with dependable, high-quality data.',
     features: [
       'Large-scale data collection',
@@ -106,7 +106,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'real-estate-data',
     description: 'Real estate data scraping service for agencies and investors.',
     keyword: 'real estate data scraping',
-    icon: '🏠',
+    icon: 'home',
     fullDescription: 'Track property listings, prices, and market trends automatically. Unlock accurate property information and market trends to make informed investment decisions.',
     features: [
       'Property listing data',
@@ -125,7 +125,7 @@ export const SERVICES: ServiceItem[] = [
     slug: 'job-listings-data',
     description: 'Collect millions of job postings from any job board automatically.',
     keyword: 'job listings data collection',
-    icon: '💼',
+    icon: 'briefcase',
     fullDescription: 'Structured job listings data for recruitment intelligence. Gather millions of job postings to gain a competitive edge in hiring and workforce planning.',
     features: [
       'Multi-board aggregation',

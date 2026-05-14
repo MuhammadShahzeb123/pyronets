@@ -6,6 +6,10 @@ const nextConfig = {
   output: 'standalone',
   // Compression
   compress: true,
+  // Remove console logs in production
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -59,6 +63,10 @@ const nextConfig = {
       afterFiles: [],
       fallback: [],
     };
+  },
+  // Experimental features for performance
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
   },
 };
 

@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import '@/styles/globals.css';
 
-const inter = Inter({ 
+const plusJakarta = Plus_Jakarta_Sans({ 
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
+  display: 'swap',
 });
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#6C63FF',
+  themeColor: '#8B5CF6',
 };
 
 export const metadata: Metadata = {
@@ -37,13 +38,13 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} bg-background`}>
+    <html lang="en" className={`${plusJakarta.variable} bg-background`}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
-        <meta name="theme-color" content="#6C63FF" />
+        <meta name="theme-color" content="#8B5CF6" />
         
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +52,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <div className="flex flex-col min-h-screen relative">
-          {/* Background effects */}
+          {/* Background effects - dark theme */}
           <div className="fixed inset-0 bg-grid opacity-30 pointer-events-none" />
           <div className="fixed inset-0 pointer-events-none overflow-hidden">
             <div className="orb orb-primary w-96 h-96 -top-48 -left-48" />
@@ -60,7 +61,7 @@ export default function RootLayout({
           </div>
           
           <Header />
-          <main className="flex-grow relative z-10">
+          <main className="flex-grow relative z-10 pt-16 lg:pt-20">
             {children}
           </main>
           <Footer />

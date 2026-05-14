@@ -1,6 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { Globe, TrendingUp, Package, Bot, Home, Briefcase, ArrowRight, Check } from 'lucide-react';
+
+type IconName = 'globe' | 'trendingUp' | 'package' | 'bot' | 'home' | 'briefcase';
+
+const iconMap: Record<IconName, React.ElementType> = {
+  globe: Globe,
+  trendingUp: TrendingUp,
+  package: Package,
+  bot: Bot,
+  home: Home,
+  briefcase: Briefcase,
+};
 
 interface ServiceCardProps {
   icon: string;
@@ -22,9 +34,12 @@ export function ServiceCard({
   cta,
   index = 0,
 }: ServiceCardProps) {
+  const IconComponent = iconMap[icon as IconName];
+
   return (
-    <div
-      className="group relative glass rounded-xl p-8 glass-hover transition-all duration-300 hover:-translate-y-1 animate-fade-in-up"
+    <Link
+      href={cta?.href || '#'}
+      className="group relative block glass rounded-xl p-8 glass-hover transition-all duration-300 hover:-translate-y-1 cursor-pointer animate-fade-in-up"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Gradient border on hover */}
@@ -35,14 +50,11 @@ export function ServiceCard({
       </div>
       
       {/* Icon */}
-      <div className="text-4xl mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110">
-        <span className="relative">
-          {icon}
-          <div className="absolute inset-0 blur-xl opacity-50 group-hover:opacity-80 transition-opacity">
-            {icon}
-          </div>
-        </span>
-      </div>
+      {IconComponent && (
+        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110">
+          <IconComponent className="w-6 h-6 text-primary" />
+        </div>
+      )}
       
       {/* Content */}
       <h3 className="text-xl font-bold text-foreground mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">
@@ -61,9 +73,7 @@ export function ServiceCard({
               className="flex items-start gap-3 text-sm text-muted-foreground"
             >
               <span className="mt-0.5 w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                <svg className="w-3 h-3 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
+                <Check className="w-3 h-3 text-secondary" />
               </span>
               <span>{feature}</span>
             </li>
@@ -73,21 +83,11 @@ export function ServiceCard({
 
       {/* CTA */}
       {cta && (
-        <Link
-          href={cta.href}
-          className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors duration-300 relative z-10 group/link"
-        >
+        <span className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors duration-300 relative z-10 group/link">
           <span>{cta.label}</span>
-          <svg
-            className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </Link>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+        </span>
       )}
-    </div>
+    </Link>
   );
 }

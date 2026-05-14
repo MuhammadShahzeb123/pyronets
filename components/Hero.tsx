@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import { ArrowRight, Shield, CheckCircle, BarChart3, Terminal, Database, Cpu, Globe, Check } from 'lucide-react';
 
 interface HeroProps {
   title: string;
@@ -14,60 +15,98 @@ interface HeroProps {
   children?: ReactNode;
 }
 
+function TerminalAnimation() {
+  const codeLines = [
+    { text: 'pyronets@server:~$ python scrape.py --target=ecommerce', type: 'command' },
+    { text: '[+] Connecting to target: shopify-store.com', type: 'info', delay: 0.5 },
+    { text: '[+] Bypassing Cloudflare... SUCCESS', type: 'success', delay: 1.2 },
+    { text: '[+] Extracting product data...', type: 'info', delay: 2.0 },
+    { text: '    → Found 1,247 products', type: 'result', delay: 2.8 },
+    { text: '[+] Processing images & variants...', type: 'info', delay: 3.5 },
+    { text: '    → 50,392 data points collected', type: 'result', delay: 4.2 },
+    { text: '[+] Quality check: VERIFIED', type: 'success', delay: 5.0 },
+    { text: '[+] Exporting to JSON... 100%', type: 'success', delay: 5.8 },
+    { text: '✓ Scraping complete: 12.4MB in 6.2s', type: 'complete', delay: 6.5 },
+    { text: '', type: 'blank', delay: 7.2 },
+    { text: 'pyronets@server:~$ _', type: 'cursor', delay: 7.5 },
+  ];
+
+  return (
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:block w-[480px] opacity-40">
+      <div className="glass rounded-lg overflow-hidden font-mono text-xs">
+        {/* Terminal header */}
+        <div className="flex items-center gap-2 px-4 py-2 bg-white/[0.05] border-b border-white/[0.08]">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <span className="ml-2 text-muted-foreground text-xs">Pyronets Scraper v2.4</span>
+        </div>
+        
+        {/* Terminal body */}
+        <div className="p-4 space-y-1 max-h-[320px] overflow-hidden">
+          {codeLines.map((line, index) => (
+            <div
+              key={index}
+              className={`animate-fade-in-up opacity-0`}
+              style={{ 
+                animationDelay: `${line.delay}s`,
+                animationFillMode: 'forwards'
+              }}
+            >
+              <span className={
+                line.type === 'command' ? 'text-secondary' :
+                line.type === 'info' ? 'text-muted-foreground' :
+                line.type === 'success' ? 'text-green-400' :
+                line.type === 'result' ? 'text-primary' :
+                line.type === 'complete' ? 'text-green-400 font-semibold' :
+                line.type === 'cursor' ? 'text-secondary animate-pulse' :
+                ''
+              }>
+                {line.type === 'result' && '    '}
+                {line.text}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function DataParticles() {
-  // Reduced from 20 to 8 particles for better performance
   const particles = [
-    { x: 15, y: 20, delay: 0 },
-    { x: 85, y: 15, delay: 0.5 },
-    { x: 45, y: 80, delay: 1 },
-    { x: 70, y: 45, delay: 1.5 },
-    { x: 25, y: 60, delay: 2 },
-    { x: 90, y: 70, delay: 0.3 },
-    { x: 10, y: 85, delay: 1.2 },
-    { x: 55, y: 25, delay: 0.8 },
+    { icon: Database, x: '10%', y: '20%', delay: 0 },
+    { icon: Globe, x: '85%', y: '15%', delay: 0.3 },
+    { icon: Cpu, x: '70%', y: '60%', delay: 0.6 },
+    { icon: Terminal, x: '15%', y: '70%', delay: 0.9 },
+    { icon: Check, x: '50%', y: '40%', delay: 1.2 },
+    { icon: Database, x: '90%', y: '80%', delay: 1.5 },
   ];
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {particles.map((particle, i) => (
+      {particles.map((particle, index) => (
         <div
-          key={i}
-          className="absolute w-1 h-1 bg-primary/40 rounded-full particle"
-          style={{ 
-            left: `${particle.x}%`, 
-            top: `${particle.y}%`,
-            animationDelay: `${particle.delay}s`
+          key={index}
+          className="absolute animate-float opacity-20"
+          style={{
+            left: particle.x,
+            top: particle.y,
+            animationDelay: `${particle.delay}s`,
           }}
-        />
+        >
+          <particle.icon className="w-8 h-8 text-primary" />
+        </div>
       ))}
     </div>
   );
 }
 
-// Static code lines visual - no JS animation
-function ScrapingVisual() {
-  const codeLines = [
-    '{ "status": "success" }',
-    'Scraping: competitor_prices',
-    'Records extracted: 10,000+',
-    'Quality check: PASSED ✓',
-    'Delivery: API ready',
-  ];
-
+function TrustBadge({ icon: Icon, text }: { icon: React.ElementType; text: string }) {
   return (
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block w-96 opacity-25">
-      <div className="glass rounded-xl p-4 font-mono text-xs space-y-2">
-        {codeLines.map((line, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2 animate-fade-in-up"
-            style={{ animationDelay: `${0.8 + index * 0.2}s` }}
-          >
-            <span className="w-2 h-2 rounded-full bg-secondary pulse-glow" />
-            <span className="text-muted-foreground">{line}</span>
-          </div>
-        ))}
-      </div>
+    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+      <Icon className="w-4 h-4 text-primary" />
+      <span>{text}</span>
     </div>
   );
 }
@@ -80,72 +119,84 @@ export function Hero({
   children,
 }: HeroProps) {
   return (
-    <div className="relative min-h-[85vh] flex items-center py-16 md:py-24 overflow-hidden">
-      <DataParticles />
-      <ScrapingVisual />
+    <div className="relative min-h-[80vh] flex items-center py-16 md:py-20 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl" />
+        <DataParticles />
+      </div>
+
+      {/* Live Terminal Animation */}
+      <TerminalAnimation />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl space-y-8">
-          {/* Subtle trust badge */}
-          <div className="animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full text-sm font-medium text-muted-foreground">
-              <span className="w-2 h-2 rounded-full bg-secondary pulse-glow" />
-              200+ Enterprises Trust Pyronets
-            </span>
+        <div className="max-w-2xl space-y-8">
+          {/* Trust badges row */}
+          <div className="flex flex-wrap items-center gap-6 animate-fade-in-up">
+            <TrustBadge icon={Shield} text="SOC 2 Certified" />
+            <TrustBadge icon={CheckCircle} text="99.8% Data Accuracy" />
+            <TrustBadge icon={BarChart3} text="10B+ Data Points/Month" />
           </div>
 
-          {/* Title - Outcome-focused */}
+          {/* Title */}
           <div className="animate-fade-in-up delay-100">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-balance">
-              <span className="text-foreground">{title}</span>
-              <br />
-              <span className="text-gradient">{subtitle}</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
+              {title}
+              <span className="block text-primary mt-2">{subtitle}</span>
             </h1>
           </div>
 
-          {/* Description - Problem-aware, solution-focused */}
+          {/* Description */}
           {description && (
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed animate-fade-in-up delay-200">
               {description}
             </p>
           )}
 
-          {/* CTA - Action-oriented */}
+          {/* CTA */}
           {cta && (
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in-up delay-300">
               <Link
                 href={cta.href}
-                className="group relative inline-flex items-center justify-center px-8 py-4 font-semibold rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 cursor-pointer"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-primary to-secondary" />
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-secondary to-primary" />
-                <span className="relative text-primary-foreground flex items-center gap-2">
-                  {cta.label}
-                  <svg
-                    className="w-5 h-5 arrow-bounce"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
+                {cta.label}
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
 
               <Link
                 href="/solution"
-                className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-xl glass glass-hover transition-all duration-300 text-foreground hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-8 py-4 font-semibold rounded-xl border border-border text-foreground hover:bg-muted/50 transition-all duration-300 cursor-pointer"
               >
-                View All Solutions
+                View Solutions
               </Link>
             </div>
           )}
+
+          {/* Trust stats */}
+          <div className="pt-8 animate-fade-in-up delay-400">
+            <p className="text-sm text-muted-foreground mb-4">Trusted by 200+ enterprises worldwide</p>
+            <div className="flex gap-8">
+              <div>
+                <p className="text-3xl font-bold text-foreground">99.8%</p>
+                <p className="text-sm text-muted-foreground">Accuracy</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-foreground">24/7</p>
+                <p className="text-sm text-muted-foreground">Support</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-foreground">50+</p>
+                <p className="text-sm text-muted-foreground">Quality Checks</p>
+              </div>
+            </div>
+          </div>
 
           {children}
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </div>
   );

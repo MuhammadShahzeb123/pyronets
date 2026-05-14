@@ -165,7 +165,7 @@ export default function LeadGenerationPage() {
             {
               num: '1',
               title: 'Define Your Ideal Customer',
-              description: 'Tell us your target criteria — industry, company size, location, technologies used, or any other parameters.',
+              description: 'Tell us who you are looking for. Industry, company size, location, the tech they use. Whatever matters to you.',
             },
             {
               num: '2',

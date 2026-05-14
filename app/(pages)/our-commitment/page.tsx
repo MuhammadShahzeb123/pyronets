@@ -68,8 +68,7 @@ export default function CaseStudiesPage() {
             </p>
             <p className="text-lg text-muted-foreground mb-6">
               When you work with us, <span className="text-primary font-semibold">you become our priority</span>. 
-              We don't have a roster of clients to juggle — we can focus entirely on your project and ensure it gets 
-              the attention it deserves.
+              We are not juggling hundreds of clients. We focus on you and your project gets the attention it deserves.
             </p>
             <p className="text-lg text-muted-foreground">
               We've worked on projects like the one mentioned below, and we know the work inside and out. 
@@ -186,8 +185,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">Our Promise to You</h2>
             <blockquote className="text-xl text-muted-foreground mb-8 italic">
-              "We may not have a long list of enterprise clients, but what we offer is something those companies can't — 
-              undivided attention, genuine dedication, and a team that will work as hard as possible to prove ourselves through your project."
+              "We may not have a long list of enterprise clients, but what we offer is something those big companies cannot give you: undivided attention, genuine dedication, and a team that will work as hard as possible to prove ourselves through your success."
             </blockquote>
             <p className="text-lg font-semibold text-foreground">
               Let's build something great together.

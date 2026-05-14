@@ -57,8 +57,8 @@ export function Footer() {
               <svg width="40" height="40" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="p-grad-footer" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#6C63FF" />
-                    <stop offset="100%" stopColor="#00D4AA" />
+                    <stop offset="0%" stopColor="#8B5CF6" />
+                    <stop offset="100%" stopColor="#22D3EE" />
                   </linearGradient>
                 </defs>
                 <g transform="scale(0.9) translate(2, 0)">
