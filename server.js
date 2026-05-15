@@ -13,8 +13,8 @@ const app = next({ dev, hostname });
 const handle = app.getRequestHandler();
 
 const httpsOptions = {
-  key: fs.readFileSync(process.env.SSL_KEY_PATH || './ssl/key.pem'),
-  cert: fs.readFileSync(process.env.SSL_CERT_PATH || './ssl/cert.pem'),
+  key: fs.readFileSync(process.env.SSL_KEY_PATH || '/etc/letsencrypt/live/pyronets.com/privkey.pem'),
+  cert: fs.readFileSync(process.env.SSL_CERT_PATH || '/etc/letsencrypt/live/pyronets.com/fullchain.pem'),
 };
 
 app.prepare().then(() => {
