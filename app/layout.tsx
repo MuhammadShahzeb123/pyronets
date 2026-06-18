@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import Script from 'next/script';
 import { ReactNode } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -49,17 +50,15 @@ export default function RootLayout({
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* FumbleMap Analytics */}
-        <script
+      </head>
+      <body className="font-sans antialiased">
+        <Script
           src="https://cdn.fumblemap.com/fumblemap.min.js"
           data-site-id="05f347d1-f6c0-4385-83df-f8443be611c0"
           data-write-token="2ae0eb5028d3a5bc359f65c4403dee1044e7d89ddb77f19d2bb9fa6aacb3cf5b"
           data-url="https://ingest.fumblemap.com/events"
-          async
+          strategy="afterInteractive"
         />
-      </head>
-      <body className="font-sans antialiased">
         <div className="flex flex-col min-h-screen relative">
           {/* Background effects - dark theme */}
           <div className="fixed inset-0 bg-grid opacity-30 pointer-events-none" />
